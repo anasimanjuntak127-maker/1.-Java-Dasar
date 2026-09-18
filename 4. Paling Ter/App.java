@@ -6,14 +6,15 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         List<Integer> nilai = new ArrayList<>();
 
-        while (sc.hasNextLine()) {
-            String line = sc.nextLine().trim();
-            if (line.equals("---")) break;
-            if (line.isEmpty()) continue;
-            nilai.add(Integer.parseInt(line));
+        try (Scanner sc = new Scanner(System.in)) {
+            while (sc.hasNextLine()) {
+                String line = sc.nextLine().trim();
+                if (line.equals("---")) break;
+                if (line.isEmpty()) continue;
+                nilai.add(Integer.parseInt(line));
+            }
         }
 
         if (nilai.isEmpty()) {

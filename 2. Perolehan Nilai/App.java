@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
 
         String[] simbolOrder = {"PA", "T", "K", "P", "UTS", "UAS"};
         Map<String, String> namaKomponen = new LinkedHashMap<>();
@@ -93,6 +93,7 @@ public class App {
         System.out.println();
         System.out.printf(Locale.US, ">> Nilai Akhir: %.2f%n", nilaiAkhir);
         System.out.println(">> Grade: " + grade(nilaiAkhir));
+        }
     }
 
     private static String grade(double nilai) {

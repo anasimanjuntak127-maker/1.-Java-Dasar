@@ -22,6 +22,7 @@ public class App {
 
         if (!valid) {
             System.out.println("Jam tidak valid");
+            sc.close();
             return;
         }
 
@@ -77,5 +78,6 @@ public class App {
         System.out.printf("Jam Akhir: %02d:%02d%n", jamAkhir, menitAkhir);
         System.out.println("Total Menit: " + totalMenitStr);
         System.out.println("Pergantian Hari: " + pergantianHari);
+        sc.close();
     }
 }
